@@ -1,0 +1,7 @@
+Simple MODX Revolution Plug which uses various methods to hide e-mail addresses from Spammers.
+
+Install:
+1.) Create a new plugin
+2.) Paste in this code
+3.) Click the OnWebPagePreRender option on the events tab (near bottom).
+
