@@ -1,7 +1,23 @@
 Simple MODX Revolution Plugin, which uses various methods to hide e-mail addresses from Spammers.
 
-Install:
+This plugin searches for all email addresses and "mailto:" strings in the html output, both inside and outside href
+attributes. In other words, it also encodes link text.
+
+It can find all common email addresses as specified by RFC2822, including all unusual but allowed characters. Any email
+addresses that satisfy the the construct below will be detected:
+
+The plugin than randomly leaves 10% of the characters alone, encodes 45% of them in decimal, and 45% of them in
+hexadecimal.
+
+Package Manager Installation:
+Simply download and install from the Package Manager. If other OnWebPagePreRender events exist in the project, order of
+execution priority may be set in the respective Plug-ins - if necessary.
+
+Manual Install:
 1.) Create a new plugin
 2.) Paste in this code
 3.) Click the OnWebPagePreRender option on the events tab (near bottom).
+
+Via Github:
+Download/Fork/Watch at https://github.com/wshawn/ObfuscateEmail
 
