@@ -90,6 +90,10 @@ function replaceEntities($matches)
     return $replaced;
 }
 
-$output = &$modx->resource->_output;
-$output = preg_replace_callback(email_regex(), "replaceEntities", $output);
-$output = preg_replace_callback('/(mailto:)/', "replaceEntities", $output);
+if ($modx->resource->get('contentType') == 'text/html') {
+    $output = &$modx->resource->_output;
+    $output = preg_replace_callback(email_regex(), "replaceEntities", $output);
+    $output = preg_replace_callback('/(mailto:)/', "replaceEntities", $output);
+}
+
+return;
